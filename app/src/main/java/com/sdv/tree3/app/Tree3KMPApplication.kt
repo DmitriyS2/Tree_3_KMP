@@ -10,7 +10,7 @@ import timber.log.Timber.DebugTree
 import javax.inject.Inject
 
 @HiltAndroidApp
-class Tree3Application : Application() {
+class Tree3KMPApplication : Application() {
 
     @JvmField
     @Inject

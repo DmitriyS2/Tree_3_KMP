@@ -14,11 +14,11 @@ plugins {
 }
 
 android {
-    namespace = "com.sdv.tree3"
+    namespace = "com.sdv.tree3.kmp"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.sdv.tree3"
+        applicationId = "com.sdv.tree3.kmp"
         minSdk = 26
         targetSdk = 35
         versionCode = 1

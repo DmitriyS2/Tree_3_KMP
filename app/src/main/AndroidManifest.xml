@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
-        android:name=".app.Tree3Application"
+        android:name=".app.Tree3KMPApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -16,7 +16,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="UploadLogs"
+            android:authorities="UploadLogsKMP"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
