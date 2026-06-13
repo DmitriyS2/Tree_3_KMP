@@ -14,7 +14,7 @@ plugins {
 }
 
 android {
-    namespace = "com.sdv.tree3.kmp"
+    namespace = "com.sdv.tree3"
     compileSdk = 36
 
     defaultConfig {
