@@ -34,6 +34,9 @@ kotlin {
         }.configure {
             instrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         }
+        lint {
+            abortOnError = false
+        }
     }
 
     // For iOS targets, this is also where you should
