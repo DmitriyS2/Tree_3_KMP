@@ -1,0 +1,28 @@
+package com.sdv.tree3.shared.com.sdv.tree3.data.impl
+
+import com.sdv.tree3.shared.com.sdv.tree3.data.DatabaseApi
+import com.sdv.tree3.shared.com.sdv.tree3.data.impl.dao.NodeDao
+import com.sdv.tree3.shared.com.sdv.tree3.data.impl.mapper.toEntity
+import com.sdv.tree3.shared.com.sdv.tree3.data.impl.mapper.toListModel
+import com.sdv.tree3.shared.com.sdv.tree3.domain.model.Node
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.mapLatest
+
+internal class DatabaseImpl constructor(
+    private val nodeDao: NodeDao,
+) : DatabaseApi {
+
+    @OptIn(ExperimentalCoroutinesApi::class)
+    override suspend fun getAllNodes(): Flow<List<Node>> = nodeDao.getAllNodes().mapLatest { it.toListModel() }
+
+    override suspend fun getAllChildrenByParent(idParent: Long): List<Node> = nodeDao.getAllChildrenByParent(idParent).toListModel()
+
+    override suspend fun getNodeById(id: Long): Node? = nodeDao.getNodeById(id)?.toListModel()
+
+    override suspend fun insert(node: Node): Long = nodeDao.insert(node.toEntity())
+
+    override suspend fun deleteNodeById(id: Long) = nodeDao.deleteNodeById(id)
+
+    override suspend fun deleteNodeByIdParent(idParent: Long) = nodeDao.deleteNodeByIdParent(idParent)
+}
