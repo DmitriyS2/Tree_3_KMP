@@ -1,7 +1,15 @@
+import org.gradle.kotlin.dsl.add
+
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.android.kotlin.multiplatform.library)
+    alias(libs.plugins.androidx.room)
+    alias(libs.plugins.ksp)
     alias(libs.plugins.android.lint)
+}
+
+room {
+    schemaDirectory("$projectDir/schemas")
 }
 
 kotlin {
@@ -64,7 +72,8 @@ kotlin {
         commonMain {
             dependencies {
                 implementation(libs.kotlin.stdlib)
-                // Add KMP dependencies here
+                implementation(libs.androidx.room.runtime)
+                implementation("androidx.sqlite:sqlite-bundled:2.5.0-alpha01")
             }
         }
 
@@ -100,5 +109,10 @@ kotlin {
             }
         }
     }
-
+}
+dependencies {
+    add("kspAndroid", libs.androidx.room.annotation.processor)
+    add("kspIosX64", libs.androidx.room.annotation.processor)
+    add("kspIosArm64", libs.androidx.room.annotation.processor)
+    add("kspIosSimulatorArm64", libs.androidx.room.annotation.processor)
 }

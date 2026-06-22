@@ -64,7 +64,8 @@ composeRuntimeLifecycle = { group = "androidx.lifecycle", name = "lifecycle-runt
 
 # Room
 androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "roomKtx" }
-androidx-room-annotation-processor = {group = "androidx.room", name = "room-compiler", version.ref = "roomKtx" }
+androidx-room-annotation-processor = { group = "androidx.room", name = "room-compiler", version.ref = "roomKtx" }
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "roomKtx" }
 
 # navigation
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
@@ -86,5 +87,6 @@ ksp = {id = "com.google.devtools.ksp", version.ref = "kspVersion"}
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 android-kotlin-multiplatform-library = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
+androidx-room = { id = "androidx.room", version.ref = "roomKtx" }
 android-lint = { id = "com.android.lint", version.ref = "agp" }
 
