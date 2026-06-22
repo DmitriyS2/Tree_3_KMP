@@ -19,6 +19,10 @@ navigationCompose = "2.9.0"
 hiltVmVersion = "1.2.0"
 timberVersion = "4.7.1"
 jodaTimeVersion = "2.14.0"
+kotlinStdlib = "2.2.21"
+kotlinTest = "2.2.21"
+runner = "1.5.2"
+core = "1.5.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -64,6 +68,10 @@ androidx-room-annotation-processor = {group = "androidx.room", name = "room-comp
 
 # navigation
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
+kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlinStdlib" }
+kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlinTest" }
+androidx-runner = { group = "androidx.test", name = "runner", version.ref = "runner" }
+androidx-core = { group = "androidx.test", name = "core", version.ref = "core" }
 
 [bundles]
 lifecycle = ["lifecycle-runtime", "lifecycle-viewmodel", "composeRuntimeLifecycle"]
@@ -76,4 +84,7 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 ksp = {id = "com.google.devtools.ksp", version.ref = "kspVersion"}
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+android-kotlin-multiplatform-library = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
+android-lint = { id = "com.android.lint", version.ref = "agp" }
 
