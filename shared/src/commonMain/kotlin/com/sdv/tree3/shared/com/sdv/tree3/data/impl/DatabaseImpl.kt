@@ -8,7 +8,9 @@ import com.sdv.tree3.shared.com.sdv.tree3.domain.model.Node
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.mapLatest
+import org.koin.core.annotation.Single
 
+@Single(binds = [DatabaseApi::class])
 internal class DatabaseImpl constructor(
     private val nodeDao: NodeDao,
 ) : DatabaseApi {

@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.android.kotlin.multiplatform.library)
     alias(libs.plugins.androidx.room)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.koin.compiler)
     alias(libs.plugins.android.lint)
 }
 
@@ -77,6 +78,10 @@ kotlin {
                 implementation(libs.kotlin.stdlib)
                 implementation(libs.androidx.room.runtime)
                 implementation("androidx.sqlite:sqlite-bundled:2.5.0-alpha01")
+                implementation(libs.koin.core)
+                implementation(libs.koin.compose)
+                implementation(libs.koin.compose.viewmodel)
+                implementation(libs.koin.annotations)
             }
         }
 
@@ -114,6 +119,7 @@ kotlin {
     }
 }
 dependencies {
+    // Room компилятор
     add("kspAndroid", libs.androidx.room.annotation.processor)
     add("kspIosX64", libs.androidx.room.annotation.processor)
     add("kspIosArm64", libs.androidx.room.annotation.processor)

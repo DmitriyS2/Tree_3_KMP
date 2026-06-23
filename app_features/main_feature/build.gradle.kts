@@ -41,7 +41,8 @@ kotlin {
 
 dependencies {
     implementation(project(":app_features:base_feature"))
-    implementation(project(":domain"))
+ //   implementation(project(":domain"))
+    implementation(project(":shared"))
     implementation(project(":data"))
     implementation(project(":datastore"))
     implementation(project(":common"))

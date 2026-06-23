@@ -1,7 +1,7 @@
 package com.sdv.main_feature.data.mapper
 
-import com.sdv.domain.model.Node
 import com.sdv.main_feature.domain.model.NodeUI
+import com.sdv.tree3.shared.com.sdv.tree3.domain.model.Node
 
 fun Node.toUI() = NodeUI(
     id = this.id,
