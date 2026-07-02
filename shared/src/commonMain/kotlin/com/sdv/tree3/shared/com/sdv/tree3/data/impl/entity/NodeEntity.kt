@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-internal data class NodeEntity(
+data class NodeEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Long,
     val name: String = "",

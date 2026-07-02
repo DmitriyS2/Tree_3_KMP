@@ -1,6 +1,6 @@
 [versions]
 agp = "8.13.2"
-kotlin = "2.2.21"
+kotlin = "2.3.20"
 coreKtx = "1.16.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -11,16 +11,16 @@ composeBom = "2025.06.00"
 appcompat = "1.7.1"
 material = "1.12.0"
 datastoreVersion = "1.1.7"
-hilt = "2.56.2"
+hilt = "2.58"
 lifecycle = "2.9.1"
 roomKtx = "2.7.1"
-kspVersion = "2.2.21-2.0.5"
+kspVersion = "2.3.6"
 navigationCompose = "2.9.0"
-hiltVmVersion = "1.2.0"
+hiltVmVersion = "1.3.0"
 timberVersion = "4.7.1"
 jodaTimeVersion = "2.14.0"
-kotlinStdlib = "2.2.21"
-kotlinTest = "2.2.21"
+kotlinStdlib = "2.3.20"
+kotlinTest = "2.3.20"
 runner = "1.5.2"
 core = "1.5.0"
 koin = "4.2.2"
@@ -48,6 +48,8 @@ koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koin" }
 koin-compose-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koin" }
 koin-annotations = { module = "io.insert-koin:koin-annotations", version.ref = "koin" }
+koin-compiler = { module = "io.insert-koin:koin-ksp-compiler", version.ref = "koin-compiler-plugin" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 
 #logging
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timberVersion"}
@@ -56,7 +58,7 @@ timber = { module = "com.jakewharton.timber:timber", version.ref = "timberVersio
 joda-time = { module = "joda-time:joda-time", version.ref = "jodaTimeVersion"}
 
 #DataStore
-datastore-android = {module = "androidx.datastore:datastore", version.ref = "datastoreVersion"}
+datastore-core = {module = "androidx.datastore:datastore", version.ref = "datastoreVersion"}
 datastore-pref = {module = "androidx.datastore:datastore-preferences", version.ref = "datastoreVersion"}
 
 #DI
@@ -72,7 +74,7 @@ composeRuntimeLifecycle = { group = "androidx.lifecycle", name = "lifecycle-runt
 
 # Room
 androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "roomKtx" }
-androidx-room-annotation-processor = { group = "androidx.room", name = "room-compiler", version.ref = "roomKtx" }
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "roomKtx" }
 androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "roomKtx" }
 
 # navigation
@@ -84,7 +86,7 @@ androidx-core = { group = "androidx.test", name = "core", version.ref = "core" }
 
 [bundles]
 lifecycle = ["lifecycle-runtime", "lifecycle-viewmodel", "composeRuntimeLifecycle"]
-datastore = ["datastore-android", "datastore-pref"]
+datastore = ["datastore-core", "datastore-pref"]
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

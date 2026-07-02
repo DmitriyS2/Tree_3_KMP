@@ -3,9 +3,11 @@ package com.sdv.main_feature.domain.usecase
 import com.sdv.common.log.util.TAG
 import com.sdv.common.log.util.logDebug
 import com.sdv.datastore.DataStorage
+import org.koin.core.annotation.Single
 import javax.inject.Inject
 
-internal class GoToChildrenUseCaseImpl @Inject constructor(
+@Single([GoToChildrenUseCase::class])
+internal class GoToChildrenUseCaseImpl (
     private val dataStorage: DataStorage,
 ) : GoToChildrenUseCase {
 

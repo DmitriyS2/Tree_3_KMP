@@ -21,10 +21,11 @@ import com.sdv.main_feature.presentation.MainContract.Effect
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
+import org.koin.core.annotation.KoinViewModel
 import javax.inject.Inject
 
-@HiltViewModel
-internal class MainViewModel @Inject constructor(
+@KoinViewModel
+internal class MainViewModel (
     private val dataStorage: DataStorage,
     private val setFirstParentUseCase: SetFirstParentUseCase,
     private val addNodeUseCase: AddNodeUseCase,

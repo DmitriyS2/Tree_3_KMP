@@ -11,11 +11,13 @@ import com.sdv.common.util.showToast
 import com.sdv.main_feature.presentation.MainContract
 import com.sdv.main_feature.presentation.MainScreen
 import com.sdv.main_feature.presentation.MainViewModel
+import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun MainFeatureRoute(padding: PaddingValues) {
 
-    val viewModel: MainViewModel = hiltViewModel()
+  //  val viewModel: MainViewModel = hiltViewModel()
+    val viewModel: MainViewModel = koinViewModel()
     val state = viewModel.state.collectAsState()
     val context = LocalContext.current
 

@@ -3,9 +3,11 @@ package com.sdv.main_feature.domain.usecase
 import com.sdv.main_feature.data.repository.MainRepository
 import com.sdv.main_feature.domain.model.NodeUI
 import kotlinx.coroutines.flow.Flow
+import org.koin.core.annotation.Single
 import javax.inject.Inject
 
-internal class GetAllNodesUseCaseImpl @Inject constructor(
+@Single([GetAllNodesUseCase::class])
+internal class GetAllNodesUseCaseImpl (
     private val mainRepository: MainRepository,
 ) : GetAllNodesUseCase {
 

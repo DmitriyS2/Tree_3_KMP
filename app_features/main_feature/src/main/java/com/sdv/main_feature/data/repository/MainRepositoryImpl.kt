@@ -8,9 +8,11 @@ import com.sdv.tree3.shared.com.sdv.tree3.data.DatabaseApi
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.mapLatest
+import org.koin.core.annotation.Single
 import javax.inject.Inject
 
-internal class MainRepositoryImpl @Inject constructor(
+@Single ([MainRepository::class])
+internal class MainRepositoryImpl (
     private val databaseApi: DatabaseApi,
 ) : MainRepository {
 

@@ -78,6 +78,7 @@ kotlin {
                 implementation(libs.kotlin.stdlib)
                 implementation(libs.androidx.room.runtime)
                 implementation("androidx.sqlite:sqlite-bundled:2.5.0-alpha01")
+
                 implementation(libs.koin.core)
                 implementation(libs.koin.compose)
                 implementation(libs.koin.compose.viewmodel)
@@ -119,9 +120,11 @@ kotlin {
     }
 }
 dependencies {
-    // Room компилятор
-    add("kspAndroid", libs.androidx.room.annotation.processor)
-    add("kspIosX64", libs.androidx.room.annotation.processor)
-    add("kspIosArm64", libs.androidx.room.annotation.processor)
-    add("kspIosSimulatorArm64", libs.androidx.room.annotation.processor)
+    // ksp работает глобально для всех таргетов KMP, если плагин настроен верно
+    ksp(libs.androidx.room.compiler)
+    ksp(libs.koin.compiler) // для koin-annotations, раз вы добавили плагин koin.compiler
+}
+ksp {
+    arg("KOIN_DEFAULT_MODULE", "false") // Отключаем генерацию конфликтующего DefaultKt
+    arg("KOIN_GENERATION_PACKAGE", "com.sdv.tree3.shared.di.generated") // Свой пакет для shared
 }

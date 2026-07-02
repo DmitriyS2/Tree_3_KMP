@@ -8,7 +8,7 @@ import com.sdv.tree3.shared.com.sdv.tree3.data.impl.entity.NodeEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-internal interface NodeDao {
+interface NodeDao {
 
     //дать все nodes
     @Query("SELECT * FROM NodeEntity")

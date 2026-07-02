@@ -24,43 +24,43 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
-@Module
-@InstallIn(SingletonComponent::class)
-internal interface UseCaseModule {
-
-    @Binds
-    @Singleton
-    fun bindSetFirstParentUseCase(impl: SetFirstParentUseCaseImpl): SetFirstParentUseCase
-
-    @Binds
-    @Singleton
-    fun bindAddNodeUseCase(impl: AddNodeUseCaseImpl): AddNodeUseCase
-
-    @Binds
-    @Singleton
-    fun bindGetNodeByIdUseCase(impl: GetNodeByIdUseCaseImpl): GetNodeByIdUseCase
-
-    @Binds
-    @Singleton
-    fun bindGetChildrenForParentByIdUseCase(impl: GetChildrenForParentByIdUseCaseImpl): GetChildrenForParentByIdUseCase
-
-    @Binds
-    @Singleton
-    fun bindDeleteNodeUseCase(impl: DeleteNodeUseCaseImpl): DeleteNodeUseCase
-
-    @Binds
-    @Singleton
-    fun bindGoToParentUseCase(impl: GoToParentUseCaseImpl): GoToParentUseCase
-
-    @Binds
-    @Singleton
-    fun bindGoToChildrenUseCase(impl: GoToChildrenUseCaseImpl): GoToChildrenUseCase
-
-    @Binds
-    @Singleton
-    fun bindGetAllNodesUseCase(impl: GetAllNodesUseCaseImpl): GetAllNodesUseCase
-
-    @Binds
-    @Singleton
-    fun bindGetFileLogsUseCase(impl: GetFileLogsUseCaseImpl): GetFileLogsUseCase
-}
+//@Module
+//@InstallIn(SingletonComponent::class)
+//internal interface UseCaseModule {
+//
+//    @Binds
+//    @Singleton
+//    fun bindSetFirstParentUseCase(impl: SetFirstParentUseCaseImpl): SetFirstParentUseCase
+//
+//    @Binds
+//    @Singleton
+//    fun bindAddNodeUseCase(impl: AddNodeUseCaseImpl): AddNodeUseCase
+//
+//    @Binds
+//    @Singleton
+//    fun bindGetNodeByIdUseCase(impl: GetNodeByIdUseCaseImpl): GetNodeByIdUseCase
+//
+//    @Binds
+//    @Singleton
+//    fun bindGetChildrenForParentByIdUseCase(impl: GetChildrenForParentByIdUseCaseImpl): GetChildrenForParentByIdUseCase
+//
+//    @Binds
+//    @Singleton
+//    fun bindDeleteNodeUseCase(impl: DeleteNodeUseCaseImpl): DeleteNodeUseCase
+//
+//    @Binds
+//    @Singleton
+//    fun bindGoToParentUseCase(impl: GoToParentUseCaseImpl): GoToParentUseCase
+//
+//    @Binds
+//    @Singleton
+//    fun bindGoToChildrenUseCase(impl: GoToChildrenUseCaseImpl): GoToChildrenUseCase
+//
+//    @Binds
+//    @Singleton
+//    fun bindGetAllNodesUseCase(impl: GetAllNodesUseCaseImpl): GetAllNodesUseCase
+//
+//    @Binds
+//    @Singleton
+//    fun bindGetFileLogsUseCase(impl: GetFileLogsUseCaseImpl): GetFileLogsUseCase
+//}

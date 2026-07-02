@@ -11,14 +11,12 @@ import com.sdv.tree3.shared.com.sdv.tree3.data.impl.entity.NodeEntity
     version = 1,
     exportSchema = false
 )
-internal abstract class AppDatabase : RoomDatabase() {
+abstract class AppDatabase : RoomDatabase() {
     abstract fun nodeDao(): NodeDao
 }
 
-// Ожидаем билдер от платформ
 internal expect fun getDatabaseBuilder(): RoomDatabase.Builder<AppDatabase>
 
-// Общая функция, которая создает рабочую БД
 internal fun createDatabase(): AppDatabase {
     return getDatabaseBuilder()
         .setDriver(BundledSQLiteDriver())

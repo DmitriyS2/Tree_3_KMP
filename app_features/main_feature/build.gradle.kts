@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.koin.compiler)
     alias(libs.plugins.compose.compiler)
 }
 
@@ -47,6 +48,12 @@ dependencies {
     implementation(project(":datastore"))
     implementation(project(":common"))
 
+    // Koin
+    implementation(libs.koin.android)
+    implementation(libs.koin.annotations)
+    implementation(libs.koin.compose.viewmodel)
+ //   ksp(libs.koin.compiler)
+
     // Dagger Hilt
     implementation(libs.hilt.android)
     implementation(libs.hilt.viewmodel.android)
@@ -70,4 +77,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+}
+ksp {
+    arg("KOIN_USE_FQDN_FOR_MODULE_NAME", "true")
+    arg("KOIN_GENERATION_PACKAGE", "com.sdv.tree3.app_features.main_feature.di.generated")
 }

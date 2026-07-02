@@ -7,9 +7,11 @@ import com.sdv.datastore.DataStorage
 import com.sdv.main_feature.data.repository.MainRepository
 import com.sdv.main_feature.domain.model.NodeUI
 import kotlinx.coroutines.flow.first
+import org.koin.core.annotation.Single
 import javax.inject.Inject
 
-internal class SetFirstParentUseCaseImpl @Inject constructor(
+@Single([SetFirstParentUseCase::class])
+internal class SetFirstParentUseCaseImpl (
     private val mainRepository: MainRepository,
     private val dataStorage: DataStorage,
 ) : SetFirstParentUseCase {

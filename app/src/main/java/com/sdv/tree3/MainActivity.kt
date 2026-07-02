@@ -17,7 +17,7 @@ import com.sdv.main_feature.MainFeatureRoute
 import com.sdv.tree3.ui.theme.Tree3Theme
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
